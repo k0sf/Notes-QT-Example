@@ -11,15 +11,21 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    progressbar.cpp
+    progressbar.cpp \
+    window/dialogchildwindow.cpp \
+    window/dialogwindowinteractive.cpp
 
 HEADERS += \
     mainwindow.h \
-    progressbar.h
+    progressbar.h \
+    window/dialogchildwindow.h \
+    window/dialogwindowinteractive.h
 
 FORMS += \
     mainwindow.ui \
-    progressbar.ui
+    progressbar.ui \
+    window/dialogchildwindow.ui \
+    window/dialogwindowinteractive.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -15,6 +15,11 @@ MainWindow::MainWindow(QWidget *parent)
             pbarWindow->show();
         }
     });
+
+    connect(ui->pushButton_window_interactive,&QPushButton::clicked,[=]{
+//        windowInteractive->setModal(true);
+        windowInteractive->show();
+    });
 }
 
 MainWindow::~MainWindow()

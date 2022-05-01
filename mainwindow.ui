@@ -40,6 +40,32 @@
      </property>
     </widget>
    </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>200</x>
+      <y>0</y>
+      <width>120</width>
+      <height>171</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>其他</string>
+    </property>
+    <widget class="QPushButton" name="pushButton_window_interactive">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>100</width>
+       <height>32</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>窗口交互</string>
+     </property>
+    </widget>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

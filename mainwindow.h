@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "progressbar.h"
+#include "window/dialogwindowinteractive.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,6 +19,8 @@ public:
 
 public:
     progressbar* pbarWindow = new progressbar(); // 进度条
+    // 窗口交互
+    DialogWindowInteractive* windowInteractive = new DialogWindowInteractive;
 
 private:
     Ui::MainWindow *ui;
