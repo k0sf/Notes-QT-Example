@@ -70,8 +70,6 @@ AceEditorWindow::AceEditorWindow(QWidget *parent) :
     });
 
     ui->centralwidget->layout()->addWidget(view);
-//    view->show();
-//    view->load(QUrl::fromLocalFile("/Users/yang/Documents/k0sf/Notes-QT-Example/code_editor/ace/test.html"));
 }
 
 AceEditorWindow::~AceEditorWindow()
