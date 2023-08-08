@@ -3,7 +3,14 @@
 
 #include <QMainWindow>
 #include "progressbar.h"
+
+// 窗口
 #include "window/dialogwindowinteractive.h"
+
+// 代码编辑器
+#include "CodeEditor/AceEditorWindow.h"
+
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -21,6 +28,9 @@ public:
     progressbar* pbarWindow = new progressbar(); // 进度条
     // 窗口交互
     DialogWindowInteractive* windowInteractive = new DialogWindowInteractive;
+
+    // 代码编辑器
+    AceEditorWindow* window_ace_editor = new AceEditorWindow;
 
 private:
     Ui::MainWindow *ui;

@@ -14,56 +14,81 @@
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGroupBox" name="groupBox_base">
+   <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>0</y>
-      <width>181</width>
-      <height>541</height>
+      <width>771</width>
+      <height>531</height>
      </rect>
     </property>
-    <property name="title">
-     <string>控件集合</string>
+    <property name="currentIndex">
+     <number>3</number>
     </property>
-    <widget class="QPushButton" name="pushButton_progressbar">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>160</y>
-       <width>100</width>
-       <height>32</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>进度条</string>
-     </property>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>布局</string>
+     </attribute>
     </widget>
-   </widget>
-   <widget class="QGroupBox" name="groupBox">
-    <property name="geometry">
-     <rect>
-      <x>200</x>
-      <y>0</y>
-      <width>120</width>
-      <height>171</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>其他</string>
-    </property>
-    <widget class="QPushButton" name="pushButton_window_interactive">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>100</width>
-       <height>32</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>窗口交互</string>
-     </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>基本控件</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton_progressbar">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>100</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>简单进度条</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>窗口</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton_window_interactive">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>100</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>窗口交互</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_code_editor">
+     <attribute name="title">
+      <string>代码编辑器</string>
+     </attribute>
+     <widget class="QPushButton" name="pushButton_window_ace_editor">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>20</y>
+        <width>100</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Ace 编辑器</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_5">
+     <attribute name="title">
+      <string>终端</string>
+     </attribute>
     </widget>
    </widget>
   </widget>

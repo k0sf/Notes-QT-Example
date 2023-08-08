@@ -8,17 +8,21 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
     this->setWindowTitle("笔记-QT实例集合");
 
-    ui->groupBox_base->setTitle("基本控件集合");
-    ui->pushButton_progressbar->setText("进度条");
     connect(ui->pushButton_progressbar,&QPushButton::clicked,[=]{
         if(pbarWindow->isHidden()){
             pbarWindow->show();
         }
     });
 
+    // 窗口 =============================================
     connect(ui->pushButton_window_interactive,&QPushButton::clicked,[=]{
 //        windowInteractive->setModal(true);
         windowInteractive->show();
+    });
+
+    // 代码编辑 =============================================
+    connect(ui->pushButton_window_ace_editor,&QPushButton::clicked,[=]{
+        window_ace_editor->show();
     });
 }
 
