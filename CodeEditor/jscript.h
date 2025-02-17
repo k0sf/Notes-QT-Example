@@ -5,8 +5,9 @@
 #include <QDebug>
 //#include <QVector>
 #include <QVariant>
-
+#include <QJsonDocument>
 #include <QJsonObject>
+#include <QJsonArray>
 
 
 
@@ -124,6 +125,56 @@ public slots:
 
 private:
 
+};
+
+
+// {id: 'azcli', extensions: Array(1), aliases: Array(2), loader: ƒ}
+struct MonacoEditorLangStruct {
+    QString id;
+    QList<QString> extensions;
+    QList<QString> aliases;
+
+    QJsonObject toJson() const {
+        QJsonObject jsonObj;
+        jsonObj["id"] = id;
+        jsonObj["extensions"] = QJsonArray::fromStringList(extensions);
+        jsonObj["aliases"] = QJsonArray::fromStringList(aliases);
+        return jsonObj;
+    }
+
+    static MonacoEditorLangStruct fromJson(const QVariant &data) {
+        MonacoEditorLangStruct lang;
+        QMap obj = data.toMap();
+        lang.id = obj["id"].toString();
+        lang.extensions = obj["extensions"].toStringList();
+        lang.aliases = obj["aliases"].toStringList();
+        return lang;
+    }
+    static MonacoEditorLangStruct fromJson(const QJsonObject& jsonObj) {
+        MonacoEditorLangStruct lang;
+        lang.id = jsonObj["id"].toString();
+        if(jsonObj["extensions"].isArray()){
+            QJsonArray list = jsonObj["extensions"].toArray();
+            for (const QJsonValueRef& v: list) {
+                lang.extensions.append(v.toString());
+            }
+        }
+        if(jsonObj["aliases"].isArray()){
+            QJsonArray list = jsonObj["aliases"].toArray();
+            for (const QJsonValueRef& v: list) {
+                lang.aliases.append(v.toString());
+            }
+        }
+        return lang;
+    }
+    static MonacoEditorLangStruct fromJson(const QByteArray& jsonData){
+        QJsonDocument jsonDoc = QJsonDocument::fromJson(jsonData);
+        QJsonObject jsonObj = jsonDoc.object();
+        return fromJson(jsonObj);
+    }
+    static MonacoEditorLangStruct fromJson(const QString& jsonText){
+        return fromJson(jsonText.toUtf8());
+    }
 };
 
 #endif // JSCRIPT_H

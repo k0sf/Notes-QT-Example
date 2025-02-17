@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+            <html>
+            <head>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs/loader.min.js"></script>
+            </head>
+            <style>
+                body {
+                    overflow: hidden;
+                }
+                #container {
+                    height: 100%;
+                    width: 100%;
+                    margin: 0;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                }
+            </style>
+            <body>
+                <div id="container"></div>
+                <script>
+                    require.config({ paths: { 'vs': 'https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.2/min/vs' }});
+                    require(['vs/editor/editor.main'], function() {
+                        var editor = monaco.editor.create(document.getElementById('container'), {
+                            value: "// Hello, Monaco Editor!\nint main() {\n    return 0;\n}",
+                            language: 'cpp',
+                            theme: 'vs-dark'
+                        });
+
+                        // 监听内容变化
+                        editor.onDidChangeModelContent(function(event) {
+                            console.log('Content changed:', editor.getValue());
+                        });
+                        // 获取所有注册语言的函数
+    function getLanguages() {
+        return monaco.languages.getLanguages().map(lang => lang.id);
+    }
+
+                    console.log(monaco.languages.getLanguages());
+                    console.log("当前代码",editor.getValue());
+                    console.log("当前语言ID",editor.getModel().getLanguageId());
+                    console.log("当前主题",editor._themeService._theme.themeName);
+                    });
+                </script>
+            </body>
+            </html>

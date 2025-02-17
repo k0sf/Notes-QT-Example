@@ -10,7 +10,15 @@ CONFIG += c++17
 
 SOURCES += \
     CodeEditor/AceEditorWindow.cpp \
+    CodeEditor/MonacoEditorWindow.cpp \
     CodeEditor/jscript.cpp \
+    inputs/comboboxdialog.cpp \
+    item/listview/customlistviewdelegate.cpp \
+    item/listview/dialoglistview.cpp \
+    item/listwidget/dialoglistwidget.cpp \
+    item/tableview/customtableviewmodel.cpp \
+    item/tableview/dialogtableview.cpp \
+    item/tableview/tableviewmodel.cpp \
     main.cpp \
     mainwindow.cpp \
     progressbar.cpp \
@@ -19,7 +27,15 @@ SOURCES += \
 
 HEADERS += \
     CodeEditor/AceEditorWindow.h \
+    CodeEditor/MonacoEditorWindow.h \
     CodeEditor/jscript.h \
+    inputs/comboboxdialog.h \
+    item/listview/customlistviewdelegate.h \
+    item/listview/dialoglistview.h \
+    item/listwidget/dialoglistwidget.h \
+    item/tableview/customtableviewmodel.h \
+    item/tableview/dialogtableview.h \
+    item/tableview/tableviewmodel.h \
     mainwindow.h \
     progressbar.h \
     window/dialogchildwindow.h \
@@ -27,6 +43,11 @@ HEADERS += \
 
 FORMS += \
     CodeEditor/AceEditorWindow.ui \
+    CodeEditor/MonacoEditorWindow.ui \
+    inputs/comboboxdialog.ui \
+    item/listview/dialoglistview.ui \
+    item/listwidget/dialoglistwidget.ui \
+    item/tableview/dialogtableview.ui \
     mainwindow.ui \
     progressbar.ui \
     window/dialogchildwindow.ui \
@@ -38,4 +59,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 RESOURCES += \
-    ace.qrc
+    ace.qrc \
+    monaco.qrc

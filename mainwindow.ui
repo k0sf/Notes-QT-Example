@@ -24,7 +24,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>5</number>
     </property>
     <widget class="QWidget" name="tab_3">
      <attribute name="title">
@@ -35,19 +35,224 @@
      <attribute name="title">
       <string>基本控件</string>
      </attribute>
-     <widget class="QPushButton" name="pushButton_progressbar">
+     <widget class="QGroupBox" name="groupBox_3">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>150</y>
+        <width>291</width>
+        <height>311</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Display Widgets - 显示小部件</string>
+      </property>
+      <widget class="QPushButton" name="pushButton_progressbar">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>30</y>
+         <width>100</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>简单进度条</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_4">
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>20</y>
-        <width>100</width>
-        <height>32</height>
+        <y>150</y>
+        <width>261</width>
+        <height>311</height>
        </rect>
       </property>
-      <property name="text">
-       <string>简单进度条</string>
+      <property name="title">
+       <string>Input Widges - 输入小部件</string>
+      </property>
+      <widget class="QPushButton" name="pushButton_combo_box">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>221</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>组合框 (选择框/下拉菜单)</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>30</y>
+        <width>261</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Spacers - 垫片/间隔件</string>
       </property>
      </widget>
+     <widget class="QGroupBox" name="groupBox_6">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>30</y>
+        <width>261</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>Buttons - 按钮</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_8">
+     <attribute name="title">
+      <string>Item(项目)</string>
+     </attribute>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>30</y>
+        <width>321</width>
+        <height>441</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>项目视图 (基于模型)</string>
+      </property>
+      <widget class="QPushButton" name="pushButton_window_listview">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>30</y>
+         <width>251</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>List View - 列表视图</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>130</y>
+         <width>251</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Column View - 列视图</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_window_tableview">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>90</y>
+         <width>251</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Table View - 表格视图</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_7">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>60</y>
+         <width>251</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Tree View - 树形视图</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_8">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>170</y>
+         <width>251</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Undo View - 撤消视图</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QGroupBox" name="groupBox_2">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>30</y>
+        <width>321</width>
+        <height>441</height>
+       </rect>
+      </property>
+      <property name="title">
+       <string>项目小部件 (基于项目)</string>
+      </property>
+      <widget class="QPushButton" name="pushButton_window_listwidget">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>40</y>
+         <width>251</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>List Widget - 列表小部件</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_2">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>90</y>
+         <width>251</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Tree Widget - 树形小部件</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="geometry">
+        <rect>
+         <x>40</x>
+         <y>140</y>
+         <width>251</width>
+         <height>32</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Table Widget - 表格小部件</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_7">
+     <attribute name="title">
+      <string>Containers(容器)</string>
+     </attribute>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="title">
@@ -82,6 +287,19 @@
       </property>
       <property name="text">
        <string>Ace 编辑器</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_window_monaco_editor">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>20</y>
+        <width>100</width>
+        <height>32</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Monaco Editor</string>
       </property>
      </widget>
     </widget>

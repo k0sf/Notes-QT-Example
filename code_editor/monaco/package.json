@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "monaco-editor": "^0.52.2",
+    "qwebchannel": "^6.2.0"
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<style>
+                #container {
+                    height: 100%;
+                    width: 100%;
+                    margin: 0;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                }
+            </style>
+	</head>
+	<body>
+		<div id="container"></div>
+
+		<script src="qrc:/monaco/min/vs/loader.js"></script>
+		<script src="qrc:/monaco/qwebchannel.js"></script>
+		<script>
+			// var editor;
+			require.config({ paths: { vs: 'qrc:/monaco/min/vs' } });
+// qrc:/monaco/min/
+			require(['vs/editor/editor.main'], function () {
+				var editor = monaco.editor.create(document.getElementById('container'), {
+					value: ['function x() {', '\tconsole.log("Hello world!");', '}'].join('\n'),
+					language: 'javascript',
+					theme: 'vs-dark',
+					automaticLayout: true // 启用自动布局
+				});
+				// editor.getValue(); // 获取代码
+	            // editor.setValue(code); // 设置代码内容
+	            // editor.getModel().getLanguageId(); // 获取当前语言ID
+	            // monaco.editor.setModelLanguage(editor.getModel(), language); // 设置语言
+	            // editor._themeService._theme.themeName; // 当前主题
+	            // monaco.editor.setTheme('mytheme'); // 设置主题
+				new QWebChannel(qt.webChannelTransport, function(channel) {
+				    // 在此处与 Qt 对象进行交互
+				    var webobj = channel.objects.webobj;
+
+				    // 内置所有语言
+				    webobj.setLangs(monaco.languages.getLanguages());
+
+				    // 当前
+				    webobj.language = editor.getModel().getLanguageId();
+				    webobj.theme = editor._themeService._theme.themeName;
+				    webobj.code = editor.getValue();
+
+				    // 监听属性变化
+		            webobj.languageChanged.connect(function(id) {
+		                monaco.editor.setModelLanguage(editor.getModel(), id);
+		            });
+		            webobj.themeChanged.connect(function(theme) {
+		                monaco.editor.setTheme(theme);
+		            });
+		            webobj.codeChanged.connect(function(code) {
+		                editor.setValue(code);
+		            });
+				});				
+			});
+		</script>
+	</body>
+</html>
